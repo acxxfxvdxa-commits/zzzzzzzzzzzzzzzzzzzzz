@@ -213,4 +213,37 @@ function Notify:New(config)
 
 end
 
+function Notify:Info(message, config)
+
+    config = config or {}
+
+    config["mensagem predefinido"] = message
+    config["tipo de mensagem"] = "info"
+
+    self:New(config)
+
+end
+
+function Notify:Warn(message, config)
+
+    config = config or {}
+
+    config["mensagem predefinido"] = message
+    config["tipo de mensagem"] = "alerta"
+
+    self:New(config)
+
+end
+
+function Notify:Error(message, config)
+
+    config = config or {}
+
+    config["mensagem predefinido"] = message
+    config["tipo de mensagem"] = "erro"
+
+    self:New(config)
+
+end
+
 return Notify
